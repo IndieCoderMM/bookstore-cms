@@ -8,11 +8,13 @@ const BooksList = () => {
       id: 1,
       title: 'One Thing',
       author: 'Garry Keller',
+      progress: '53',
     },
     {
       id: 0,
       title: 'Atomic Habits',
       author: 'James Clear',
+      progress: '67',
     },
   ];
   return (
@@ -20,7 +22,11 @@ const BooksList = () => {
       <ul className="bookslist">
         {books.map((book) => (
           <li key={book.id}>
-            <Book title={book.title} author={book.author} />
+            <Book
+              title={book.title}
+              author={book.author}
+              progress={book.progress}
+            />
           </li>
         ))}
       </ul>
