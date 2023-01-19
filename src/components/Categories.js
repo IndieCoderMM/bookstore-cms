@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Categories = () => (
-  <div>
+  <article>
     <h2>Categories</h2>
     <button type="button">Check Status</button>
-  </div>
+  </article>
 );
 
 export default Categories;

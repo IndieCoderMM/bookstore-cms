@@ -2,19 +2,23 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
-  <div>
-    <h1>Bookstore CMS</h1>
+  <div className="navbar">
+    <h1 className="nav-brand">Bookstore CMS</h1>
     <nav>
-      <ul>
+      <ul className="nav-list">
         <li>
-          <NavLink to="/">Books</NavLink>
+          <NavLink to="/" className="nav-link">
+            Books
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/categories">Categories</NavLink>
+          <NavLink to="/categories" className="nav-link">
+            Categories
+          </NavLink>
         </li>
       </ul>
     </nav>
-    <div>User</div>
+    <div className="user-icon">User</div>
   </div>
 );
 

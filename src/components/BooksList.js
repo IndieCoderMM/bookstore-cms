@@ -16,7 +16,7 @@ const BooksList = () => {
     },
   ];
   return (
-    <div className="bookslist-container">
+    <article className="bookslist-container">
       <ul className="bookslist">
         {books.map((book) => (
           <li key={book.id}>
@@ -25,7 +25,7 @@ const BooksList = () => {
         ))}
       </ul>
       <BookForm />
-    </div>
+    </article>
   );
 };
 
