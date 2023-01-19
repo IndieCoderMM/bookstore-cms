@@ -160,7 +160,7 @@ article {
   font-family: 'Montserrat', sans-serif;
 }
 
-.book-form > button {
+.add-btn {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
@@ -168,6 +168,6 @@ article {
   color: #fff;
 }
 
-.book-form > button:hover {
+.add-btn:hover {
   background-color: var(--skyblue);
 }

@@ -6,7 +6,9 @@ const BookForm = () => (
     <form className="book-form">
       <input type="text" placeholder="Book title" />
       <input type="text" placeholder="Book author" />
-      <button type="submit">Add Book</button>
+      <button type="submit" className="add-btn">
+        Add Book
+      </button>
     </form>
   </div>
 );
