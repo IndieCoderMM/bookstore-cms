@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Slab:wght@300;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --skyblue: #0290ff;
+  --blue: #4386bf;
+  --indigo: #307bbe;
+  --gray: #e8e8e8;
+  --black: #121212;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar  */
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 1rem;
+  border-bottom: solid 1px var(--gray);
+}
+
+.nav-brand {
+  color: var(--skyblue);
+  font-weight: 700;
+}
+
+nav {
+  flex: 1;
+  padding: 0.5rem 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.nav-link.active {
+  color: #000;
+}
+
+/* Commons  */
+article {
+  width: 100%;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Bookslist  */
+.bookslist-container {
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bookslist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+}
+
+.book {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  font-family: 'Roboto Slab', serif;
+  border: solid 1px var(--gray);
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.book-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.book-title {
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+.book-author {
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: var(--blue);
+}
+
+.btn-group {
+  display: flex;
+}
+
+.btn-group > button {
+  color: var(--blue);
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  background-color: #fff;
+  font-size: 0.8rem;
+  font-weight: 300;
+  min-width: 100px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-group > button:hover {
+  color: var(--skyblue);
+}
+
+.btn-group > .vertical-divider {
+  width: 0.12rem;
+  height: 1.5rem;
+  background-color: var(--gray);
+}
+
+.progress-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.percent-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.percent {
+  font-size: 2rem;
+}
+
+.status-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.status-container > h2 {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.book > .vertical-divider {
+  width: 3px;
+  height: 4rem;
+  background-color: var(--gray);
+}
+
+.update-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--blue);
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 3px;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.update-btn:hover {
+  background-color: var(--skyblue);
+}
+
+/* Bookform  */
+.form-container {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  width: 80%;
+  border-top: solid 2px var(--gray);
+}
+
+.form-container > h2 {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.book-form {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.book-form > input {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5rem 1rem;
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.book-form > input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.add-btn {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background-color: var(--skyblue);
+}
+
+/* Progress circle  */
+.progress-bar {
+  --value: 54;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(
+      closest-side,
+      white 80%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--skyblue) calc(var(--value) * 1%), var(--gray) 0);
 }
