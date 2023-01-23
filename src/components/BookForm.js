@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
-const BookForm = ({ addBook }) => {
+const BookForm = () => {
   const titleInput = useRef();
   const authorInput = useRef();
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const title = titleInput.current.value.trim();
     const author = authorInput.current.value.trim();
     if (title.length && author.length) {
-      addBook(title, author);
+      dispatch(addBook({ title, author }));
       titleInput.current.value = '';
       authorInput.current.value = '';
     }
@@ -26,10 +29,6 @@ const BookForm = ({ addBook }) => {
       </form>
     </div>
   );
-};
-
-BookForm.propTypes = {
-  addBook: PropTypes.func.isRequired,
 };
 
 export default BookForm;

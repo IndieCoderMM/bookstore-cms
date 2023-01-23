@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-const Book = ({ book, remove }) => {
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
   const {
     id, title, author, progress,
   } = book;
   const handleRemove = () => {
-    remove(id);
+    dispatch(removeBook({ id }));
   };
   return (
     <div className="book">
@@ -49,7 +52,6 @@ Book.propTypes = {
     author: PropTypes.string.isRequired,
     progress: PropTypes.number.isRequired,
   }).isRequired,
-  remove: PropTypes.func.isRequired,
 };
 
 export default Book;
