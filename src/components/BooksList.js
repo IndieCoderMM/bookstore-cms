@@ -8,11 +8,7 @@ const BooksList = ({ books, addBook, removeBook }) => (
     <ul className="bookslist">
       {books.map((book) => (
         <li key={book.id}>
-          <Book
-            title={book.title}
-            author={book.author}
-            progress={book.progress}
-          />
+          <Book book={book} remove={removeBook} />
         </li>
       ))}
     </ul>
@@ -21,8 +17,14 @@ const BooksList = ({ books, addBook, removeBook }) => (
 );
 
 BooksList.propTypes = {
-  // eslint-disable-next-line
-  books: PropTypes.array.isRequired,
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      progress: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
   addBook: PropTypes.func.isRequired,
   removeBook: PropTypes.func.isRequired,
 };

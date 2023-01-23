@@ -8,7 +8,12 @@ const reducer = (state = [], action) => {
     case ADD_BOOK:
       return [
         ...state,
-        { id: action.id, title: action.title, author: action.author },
+        {
+          id: action.id,
+          title: action.title,
+          author: action.author,
+          progress: 0,
+        },
       ];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
