@@ -4,7 +4,7 @@ import Book from './Book';
 import BookForm from './BookForm';
 
 const BooksList = () => {
-  const { books } = useSelector((state) => state);
+  const books = useSelector((state) => state.books);
   return (
     <article className="bookslist-container">
       <ul className="bookslist">
