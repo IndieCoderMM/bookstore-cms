@@ -1,9 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-let currentId = 0;
+const initialState = [
+  {
+    id: 0,
+    title: 'One Thing',
+    author: 'Gary Keller',
+    progress: 80,
+  },
+  {
+    id: 1, title: 'Atomic Habits', author: 'James Clear', progress: 67,
+  },
+  {
+    id: 2, title: 'Educated', author: 'Tara Westover', progress: 34,
+  },
+];
+let currentId = initialState.length;
 const booksSlice = createSlice({
   name: 'books',
-  initialState: [],
+  initialState,
   reducers: {
     addBook: (state, action) => {
       currentId += 1;
