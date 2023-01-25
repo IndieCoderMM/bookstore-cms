@@ -2,9 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import BookStoreService from '../../services/BookstoreService';
 
 export const createBook = createAsyncThunk('books/create', async (book) => {
-  const { id, author, title, category } = book;
+  const {
+    id, author, title, category,
+  } = book;
   try {
-    const res = await BookStoreService.create({
+    await BookStoreService.create({
       id,
       author,
       title,
@@ -36,7 +38,6 @@ const booksSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(createBook.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.push(action.payload);
       })
       .addCase(getAllBooks.fulfilled, (state, action) => {
@@ -60,5 +61,4 @@ const booksSlice = createSlice({
 });
 
 const { reducer } = booksSlice;
-// export const { addBook, removeBook } = actions;
 export default reducer;

@@ -27,6 +27,7 @@ const BookForm = () => {
       try {
         dispatch(createBook(book)).unwrap();
       } catch (err) {
+        // eslint-disable-next-line
         console.error(err);
       }
       titleInput.current.value = '';
@@ -45,12 +46,12 @@ const BookForm = () => {
           placeholder="Book author"
           required
         />
-        <input
-          ref={categoryInput}
-          type="text"
-          placeholder="Book category"
-          required
-        />
+        <select ref={categoryInput}>
+          <option value="Action">Action</option>
+          <option value="Productivity">Productivity</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Biography">Biography</option>
+        </select>
         <button type="submit" className="add-btn">
           Add Book
         </button>
