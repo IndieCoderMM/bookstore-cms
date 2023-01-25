@@ -1,24 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import BookStoreService from '../../services/BookstoreService';
 
-export const createBook = createAsyncThunk(
-  'books/create',
-  async ({
-    id, author, title, category,
-  }) => {
-    try {
-      const res = await BookStoreService.create({
-        item_id: id,
-        author,
-        title,
-        category,
-      });
-      return res.data;
-    } catch (err) {
-      return err.message;
-    }
-  },
-);
+export const createBook = createAsyncThunk('books/create', async (book) => {
+  const { id, author, title, category } = book;
+  try {
+    const res = await BookStoreService.create({
+      id,
+      author,
+      title,
+      category,
+    });
+    return book;
+  } catch (err) {
+    return err.message;
+  }
+});
 
 export const deleteBook = createAsyncThunk('books/delete', async (id) => {
   await BookStoreService.remove(id);
