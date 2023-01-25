@@ -1,30 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import ButtonGroup from './ButtonGroup';
 
 const Book = ({ book }) => {
-  const dispatch = useDispatch();
   const {
     id, title, author, progress,
   } = book;
-  const handleRemove = () => {
-    dispatch(removeBook({ id }));
-  };
+
   return (
     <div className="book">
       <div className="book-info">
         <h2 className="book-title">{title}</h2>
         <h4 className="book-author">{author}</h4>
-        <div className="btn-group">
-          <button type="button">Comment</button>
-          <div className="vertical-divider" />
-          <button type="button" onClick={handleRemove}>
-            Remove
-          </button>
-          <div className="vertical-divider" />
-          <button type="button">Edit</button>
-        </div>
+        <ButtonGroup id={id} />
       </div>
       <div className="progress-box">
         <div className="progress-bar" />
@@ -47,7 +35,7 @@ const Book = ({ book }) => {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     progress: PropTypes.number.isRequired,
