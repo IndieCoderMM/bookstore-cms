@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/books';
+import { deleteBook } from '../redux/books/books';
 
 const ButtonGroup = ({ id }) => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
-    dispatch(removeBook({ id }));
+    dispatch(deleteBook(id));
   };
   return (
     <div className="btn-group">
