@@ -249,7 +249,8 @@ select {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       closest-side,
       white 80%,
       transparent 0 99.9%,
