@@ -99,6 +99,13 @@ article {
   gap: 1rem;
 }
 
+.book-category {
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #777;
+}
+
 .book-title {
   font-weight: 700;
   font-size: 1.375rem;
@@ -207,7 +214,8 @@ article {
   gap: 2rem;
 }
 
-.book-form > input {
+.book-form > input,
+select {
   font-family: 'Montserrat', sans-serif;
   padding: 0.5rem 1rem;
   flex: 1;
