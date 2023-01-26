@@ -289,3 +289,39 @@ select {
     ),
     conic-gradient(var(--skyblue) calc(var(--value) * 1%), var(--gray) 0);
 }
+
+/* Categories Page */
+.categories-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.status-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--indigo);
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  align-items: center;
+}
+
+.check-btn {
+  background-color: var(--indigo);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.check-btn:hover {
+  background-color: var(--skyblue);
+}
