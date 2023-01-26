@@ -42,6 +42,7 @@ const booksSlice = createSlice({
       })
       .addCase(getAllBooks.fulfilled, (state, action) => {
         const bookIds = Object.keys(action.payload);
+        const bookList = [];
         bookIds.forEach((id) => {
           const book = {
             id,
@@ -50,8 +51,9 @@ const booksSlice = createSlice({
             category: action.payload[id][0].category,
             progress: 0,
           };
-          state.push(book);
+          bookList.push(book);
         });
+        return bookList;
       })
       .addCase(deleteBook.fulfilled, (state, action) => {
         const index = state.find((book) => book.id === action.payload.id);
