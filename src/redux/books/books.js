@@ -55,10 +55,8 @@ const booksSlice = createSlice({
         });
         return bookList;
       })
-      .addCase(deleteBook.fulfilled, (state, action) => {
-        const index = state.find((book) => book.id === action.payload.id);
-        state.splice(index, 1);
-      });
+      // eslint-disable-next-line
+      .addCase(deleteBook.fulfilled, (state, action) => state.filter((b) => b.id !== action.payload.id),);
   },
 });
 
