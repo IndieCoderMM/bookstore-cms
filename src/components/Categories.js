@@ -11,10 +11,20 @@ const Categories = () => {
   };
 
   return (
-    <article>
-      <h2>Categories</h2>
-      <h3>{categoriesStatus.length ? categoriesStatus : null}</h3>
-      <button type="button" onClick={handleClick}>
+    <article className="categories-page">
+      <h2>Categories Page</h2>
+      <h3>
+        {categoriesStatus === 'UNDER_CONSTRUCTION' ? (
+          <div className="status-popup">
+            <p>
+              🚧
+              {categoriesStatus}
+              🚧
+            </p>
+          </div>
+        ) : null}
+      </h3>
+      <button type="button" onClick={handleClick} className="check-btn">
         Check Status
       </button>
     </article>

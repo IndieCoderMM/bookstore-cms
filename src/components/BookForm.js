@@ -32,7 +32,6 @@ const BookForm = () => {
       }
       titleInput.current.value = '';
       authorInput.current.value = '';
-      categoryInput.current.value = '';
     }
   };
   return (

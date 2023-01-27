@@ -1,9 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
 const Navbar = () => (
   <div className="navbar">
-    <h1 className="nav-brand">Bookstore CMS</h1>
+    <h1>
+      <NavLink to="/" className="nav-brand">
+        Bookstore CMS
+      </NavLink>
+    </h1>
     <nav>
       <ul className="nav-list">
         <li>
@@ -18,7 +23,9 @@ const Navbar = () => (
         </li>
       </ul>
     </nav>
-    <div className="user-icon">User</div>
+    <button type="button" className="user-icon">
+      <FaUserAlt />
+    </button>
   </div>
 );
 

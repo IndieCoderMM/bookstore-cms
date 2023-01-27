@@ -33,6 +33,8 @@ body {
 .nav-brand {
   color: var(--skyblue);
   font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 nav {
@@ -56,6 +58,22 @@ nav {
 
 .nav-link.active {
   color: #000;
+}
+
+.user-icon {
+  background: none;
+  border: solid 1px var(--gray);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--blue);
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.user-icon:hover {
+  color: var(--skyblue);
+  transform: scale(1.1);
 }
 
 /* Commons  */
@@ -107,12 +125,14 @@ article {
 }
 
 .book-title {
+  text-transform: capitalize;
   font-weight: 700;
   font-size: 1.375rem;
 }
 
 .book-author {
   font-weight: 300;
+  text-transform: capitalize;
   font-size: 0.875rem;
   color: var(--blue);
 }
@@ -148,12 +168,14 @@ article {
   flex: 1;
   display: flex;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
   gap: 1rem;
 }
 
 .percent-display {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .percent {
@@ -171,14 +193,20 @@ article {
 
 .status-container > h2 {
   font-size: 0.9rem;
-  color: #999;
+  color: #ccc;
   text-transform: uppercase;
 }
 
 .book > .vertical-divider {
   width: 3px;
   height: 4rem;
+  margin: 0 1rem;
   background-color: var(--gray);
+}
+
+.chapter {
+  font-weight: 300;
+  color: var(--black);
 }
 
 .update-btn {
@@ -222,6 +250,10 @@ select {
   font-size: 1.1rem;
 }
 
+.book-form > select {
+  flex: 0.5;
+}
+
 .book-form > input::placeholder {
   font-family: 'Montserrat', sans-serif;
 }
@@ -242,7 +274,7 @@ select {
 
 /* Progress circle  */
 .progress-bar {
-  --value: 54;
+  --value: 64;
 
   width: 80px;
   height: 80px;
@@ -257,4 +289,40 @@ select {
       white 0
     ),
     conic-gradient(var(--skyblue) calc(var(--value) * 1%), var(--gray) 0);
+}
+
+/* Categories Page */
+.categories-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.status-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--indigo);
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  align-items: center;
+}
+
+.check-btn {
+  background-color: var(--indigo);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.check-btn:hover {
+  background-color: var(--skyblue);
 }
