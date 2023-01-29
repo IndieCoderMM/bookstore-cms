@@ -3,13 +3,14 @@ import BookStoreService from '../../services/BookstoreService';
 
 export const createBook = createAsyncThunk('books/create', async (book) => {
   const {
-    id, author, title, category,
+    id, author, title, category, progress,
   } = book;
+  const heavyTitle = `${title}#${progress}`;
   try {
     await BookStoreService.create({
       id,
       author,
-      title,
+      title: heavyTitle,
       category,
     });
     return book;
@@ -47,9 +48,10 @@ const booksSlice = createSlice({
           const book = {
             id,
             author: action.payload[id][0].author,
-            title: action.payload[id][0].title,
+            title: action.payload[id][0].title.split('#')[0],
             category: action.payload[id][0].category,
-            progress: 0,
+            progress:
+              parseInt(action.payload[id][0].title.split('#')[0], 10) || 0,
           };
           bookList.push(book);
         });

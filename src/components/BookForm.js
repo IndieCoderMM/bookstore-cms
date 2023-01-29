@@ -8,7 +8,7 @@ const makeNewBook = (title, author, category) => ({
   title,
   author,
   category,
-  progress: 0,
+  progress: 40,
 });
 
 const BookForm = () => {

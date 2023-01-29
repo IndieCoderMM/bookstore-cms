@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonGroup from './ButtonGroup';
+import ProgressCircle from './ProgressCircle';
 
 const Book = ({ book }) => {
   const {
@@ -16,7 +17,7 @@ const Book = ({ book }) => {
         <ButtonGroup id={id} />
       </div>
       <div className="progress-box">
-        <div className="progress-bar" />
+        <ProgressCircle progress={progress} />
         <div className="percent-display">
           <span className="percent">{progress.toString().concat('%')}</span>
           <span>Completed</span>
