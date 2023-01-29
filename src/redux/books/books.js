@@ -51,7 +51,7 @@ const booksSlice = createSlice({
             title: action.payload[id][0].title.split('#')[0],
             category: action.payload[id][0].category,
             progress:
-              parseInt(action.payload[id][0].title.split('#')[0], 10) || 0,
+              parseInt(action.payload[id][0].title.split('#')[1], 10) || 0,
           };
           bookList.push(book);
         });

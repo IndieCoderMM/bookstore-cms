@@ -26,7 +26,10 @@ const Book = ({ book }) => {
       <div className="vertical-divider" />
       <div className="status-container">
         <h2>Current Chapter</h2>
-        <p className="chapter">Chapter 13</p>
+        <p className="chapter">
+          <span>Chapter:</span>
+          <span>{10 + progress * 0.1}</span>
+        </p>
         <button type="button" className="update-btn">
           Update Progress
         </button>

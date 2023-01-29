@@ -207,6 +207,8 @@ article {
 .chapter {
   font-weight: 300;
   color: var(--black);
+  display: flex;
+  gap: 0.5rem;
 }
 
 .update-btn {
@@ -242,20 +244,20 @@ article {
   gap: 2rem;
 }
 
-.book-form > input,
+.book-form input,
 select {
   font-family: 'Montserrat', sans-serif;
   padding: 0.5rem 1rem;
-  flex: 1;
   font-size: 1.1rem;
+  flex: 1;
 }
 
-.book-form > select {
-  flex: 0.5;
-}
-
-.book-form > input::placeholder {
+.book-form input::placeholder {
   font-family: 'Montserrat', sans-serif;
+}
+
+.book-form .title-input {
+  flex: 2;
 }
 
 .add-btn {
