@@ -8,7 +8,7 @@ const makeNewBook = (title, author, category, progress) => ({
   title,
   author,
   category,
-  progress: parseInt(progress, 10) * 10 || 0,
+  progress: parseInt(progress, 10) || 0,
 });
 
 const BookForm = () => {
@@ -55,18 +55,19 @@ const BookForm = () => {
           required
         />
         <select ref={categoryInput}>
-          <option value="Action">Action</option>
+          <option value="Novel">Novel</option>
           <option value="Productivity">Productivity</option>
           <option value="Sci-Fi">Sci-Fi</option>
           <option value="Biography">Biography</option>
-          <option value="Novel">Novel</option>
+          <option value="Science">Science</option>
         </select>
         <input
           ref={progressInput}
           type="number"
-          max={10}
+          max={100}
           min={0}
-          placeholder="Progress: 0"
+          step={1}
+          placeholder="0 %"
           className="progress-input"
         />
         <button type="submit" className="add-btn">

@@ -31,33 +31,35 @@ const Book = ({ book }) => {
 
   return (
     <div className="book">
-      <div className="book-info">
-        <span className="book-category">{category}</span>
-        <h2 className="book-title">{title}</h2>
-        <h4 className="book-author">{author}</h4>
-        <ButtonGroup id={id} showComments={showComments} />
-        {commentShown ? (
-          <CommentSection id={id} comments={comments[id].comments} />
-        ) : null}
-      </div>
-      <div className="progress-box">
-        <ProgressCircle progress={progress} />
-        <div className="percent-display">
-          <span className="percent">{progress.toString().concat('%')}</span>
-          <span>Completed</span>
+      <div className="book-card">
+        <div className="book-info">
+          <span className="book-category">{category}</span>
+          <h2 className="book-title">{title}</h2>
+          <h4 className="book-author">{author}</h4>
+          <ButtonGroup id={id} showComments={showComments} />
+        </div>
+        <div className="progress-box">
+          <ProgressCircle progress={progress} />
+          <div className="percent-display">
+            <span className="percent">{progress.toString().concat('%')}</span>
+            <span>Completed</span>
+          </div>
+        </div>
+        <div className="vertical-divider" />
+        <div className="status-container">
+          <h2>Current Chapter</h2>
+          <p className="chapter">
+            <span>Chapter:</span>
+            <span>{Math.floor(progress * 0.1) + 10}</span>
+          </p>
+          <button type="button" className="update-btn">
+            Update Progress
+          </button>
         </div>
       </div>
-      <div className="vertical-divider" />
-      <div className="status-container">
-        <h2>Current Chapter</h2>
-        <p className="chapter">
-          <span>Chapter:</span>
-          <span>{10 + progress * 0.1}</span>
-        </p>
-        <button type="button" className="update-btn">
-          Update Progress
-        </button>
-      </div>
+      {commentShown ? (
+        <CommentSection id={id} comments={comments[id].comments} />
+      ) : null}
     </div>
   );
 };

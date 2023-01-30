@@ -98,7 +98,7 @@ article {
   width: 80%;
 }
 
-.book {
+.book-card {
   width: 100%;
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@ article {
   text-transform: uppercase;
 }
 
-.book > .vertical-divider {
+.book-card > .vertical-divider {
   width: 3px;
   height: 4rem;
   margin: 0 1rem;
@@ -254,10 +254,6 @@ select {
 
 .book-form input::placeholder {
   font-family: 'Montserrat', sans-serif;
-}
-
-.book-form .title-input {
-  flex: 2;
 }
 
 .add-btn {
