@@ -3,15 +3,14 @@
 ## 📑 Table of Contents
 - [📚 Bookstore ](#-bookstore-)
   - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
+    - [🧰 Tech Stack ](#-tech-stack-)
+    - [💎 Key Features ](#-key-features-)
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-    - [Run tests](#run-tests)
     - [Deployment](#deployment)
   - [📧 Contact ](#-contact-)
   - [🔭 Future Features ](#-future-features-)
@@ -24,30 +23,30 @@
 
 # 📚 Bookstore <a name="about-project"></a>
 
-**Bookstore** is a CMS website where users can organize books, and update reading progress.
+**Bookstore** is a CMS website that allows users to manage their books and track reading progress. The website is built using ReactJS for the front-end and Redux for state management. The Bookstore API and Involvement API provide the functionalities to create, update, delete books, track progress and read/write comments.
 
 ![Screenshot](app_screenshot.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+### 🧰 Tech Stack <a name="tech-stack"></a>
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
-![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
-![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+- ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+- Rest APIs: 
+  - [📚 Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739)
+  - [👍 Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
+### 💎 Key Features <a name="key-features"></a>
 
-- **Add new book**
-- **Update progress**
+- Add, delete, edit books
+- Track reading progress
+- Write and view comments on books
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,8 +73,8 @@ In order to run this project you need [Node.js](https://nodejs.org/en/) installe
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
-  git clone git@github.com:IndieCoderMM/math-magicians.git
+  cd my-project
+  git clone git@github.com:IndieCoderMM/bookstore-cms.git .
 ```
 
 ### Install
@@ -83,7 +82,6 @@ Clone this repository to your desired folder:
 Install the dependencies with:
 
 ```sh
-  cd math-magicians
   npm install
 ```
 
@@ -95,13 +93,13 @@ To run the project, execute the following command:
   npm start
 ```
 
-### Run tests
+<!-- ### Run tests
 
 To run tests, run the following command:
 
 ```sh
   npm run test
-```
+``` -->
 
 ### Deployment
 
@@ -132,9 +130,9 @@ I am always looking for ways to improve my project. If you have any suggestions 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [x] **Mobile UI**
-- [ ] **Add math quotes**
-- [ ] **Add calculators**
+- [ ] **Editing book information**
+- [ ] **Updating progress**
+- [ ] **Mobile UI**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
