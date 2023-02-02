@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 
-const APP_ID = 'MrBrM9KhqI6ao1Os2Gnd';
+const APP_ID = process.env.REACT_APP_BOOKSTORE_ID;
 
 const http = axios.create({
   baseURL: BASE_URL,

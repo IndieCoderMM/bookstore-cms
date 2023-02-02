@@ -5,8 +5,8 @@ import { createBook } from '../redux/books/books';
 
 const makeNewBook = (title, author, category, progress) => ({
   id: uuidv4(),
-  title,
-  author,
+  title: title.toLowerCase(),
+  author: author.toLowerCase(),
   category,
   progress: parseInt(progress, 10) || 0,
 });
