@@ -48,16 +48,14 @@ const Book = ({ book }) => {
           <span className="book-category">{category}</span>
           <h2 className="book-title">{title}</h2>
           <h4 className="book-author">{author}</h4>
-          {editing ? null : (
-            <ButtonGroup
-              id={id}
-              toggleComment={toggleComment}
-              startEditing={startEditing}
-            />
-          )}
+          <ButtonGroup
+            id={id}
+            toggleComment={toggleComment}
+            startEditing={startEditing}
+          />
         </div>
         {editing ? (
-          <EditForm endEditing={endEditing} />
+          <EditForm id={id} endEditing={endEditing} />
         ) : (
           <ProgressBox progress={progress} />
         )}
