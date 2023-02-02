@@ -103,6 +103,7 @@ article {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: #fff;
   font-family: 'Roboto Slab', serif;
   border: solid 1px var(--gray);
@@ -241,6 +242,7 @@ article {
 .book-form {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -304,4 +306,42 @@ select {
 
 .check-btn:hover {
   background-color: var(--skyblue);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .book-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .book-info {
+    align-items: center;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-group > button {
+    flex: 1;
+    min-width: auto;
+    border: solid 1px;
+  }
+
+  .btn-group > .vertical-divider {
+    display: none;
+  }
+
+  .progress-box {
+    flex-direction: column;
+  }
+
+  .book-card > .vertical-divider {
+    display: none;
+  }
 }
