@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { createBook, deleteBook } from '../redux/books/books';
+import { updateBook } from '../redux/books/books';
 
 const FormContainer = styled.form`
   display: flex;
@@ -14,9 +14,18 @@ const FormContainer = styled.form`
     font-size: 0.9rem;
   }
 
+  & input {
+    width: 100%;
+  }
+
   & > div {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   & button {
@@ -39,27 +48,26 @@ const EditForm = ({ id, endEditing }) => {
   const [author, setAuthor] = useState(book.author);
   const [category, setCategory] = useState(book.category);
 
-  const updateBook = () => {
+  const updateBookInfo = () => {
     const updatedBook = {
       ...book,
       title: title.toLowerCase(),
       author: author.toLowerCase(),
       category,
     };
-    dispatch(deleteBook(book.id));
-    dispatch(createBook(updatedBook));
+    dispatch(updateBook(updatedBook));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim().length && author.trim().length) {
       if (
-        title === book.title &&
-        author === book.author &&
-        category === book.category
-      )
-        return;
-      updateBook();
+        title === book.title
+        && author === book.author
+        && category === book.category
+      ) return;
+      updateBookInfo();
+      endEditing();
     }
   };
   return (

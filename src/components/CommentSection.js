@@ -12,6 +12,11 @@ const Container = styled.div`
   width: 60%;
   background-color: aliceblue;
   margin-left: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const CommentForm = styled.form`
@@ -19,6 +24,10 @@ const CommentForm = styled.form`
   gap: 1rem;
   padding: 1rem;
   background-color: #fff;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   & > input {
     padding: 0.5rem 1.5rem;
@@ -113,7 +122,7 @@ const CommentSection = ({ id, comments = [] }) => {
           placeholder="Add your comment"
           required
         />
-        <button type="submit">Add</button>
+        <button type="submit">Post</button>
       </CommentForm>
       <CommentUl>
         {comments.length ? (

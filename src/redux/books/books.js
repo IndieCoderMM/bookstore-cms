@@ -24,6 +24,25 @@ export const deleteBook = createAsyncThunk('books/delete', async (id) => {
   return { id };
 });
 
+export const updateBook = createAsyncThunk('books/update', async (book) => {
+  const {
+    id, author, title, category, progress,
+  } = book;
+  const heavyTitle = `${title}#${progress}`;
+  await BookStoreService.remove(id);
+  try {
+    await BookStoreService.create({
+      id,
+      author,
+      title: heavyTitle,
+      category,
+    });
+    return book;
+  } catch (err) {
+    return err.message;
+  }
+});
+
 export const getAllBooks = createAsyncThunk('books/getAll', async () => {
   try {
     const res = await BookStoreService.getAll();
@@ -41,6 +60,10 @@ const booksSlice = createSlice({
       .addCase(createBook.fulfilled, (state, action) => {
         state.push(action.payload);
       })
+      .addCase(updateBook.fulfilled, (state, action) => [
+        ...state.filter((b) => b.id !== action.payload.id),
+        action.payload,
+      ])
       .addCase(getAllBooks.fulfilled, (state, action) => {
         const bookIds = Object.keys(action.payload);
         const bookList = [];
